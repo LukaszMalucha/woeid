@@ -3,7 +3,70 @@
 
 {% block content %}
 <div class="dashboard-cards">
+    <div class="row plain-element">
+        <div class="col-xs-12 col-sm-3 col-md-3 plain-element" id="activeTrendsColumn">
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 plain-element">
+            <div class="row row-title">
+                <div class="card card-title">
+                    <div class="row row-blue">
+                        <h1><i class="fas fa-globe"></i> WOEID Search Engine </h1>
+                    </div>
+                    <br>
+                    <div class="row row-form">
+                        <div class="input-field col s12">
+                            <input id="icon_prefix" type="text" class="validate">
+                            <label for="icon_prefix">Search for Town, State or Country</label>
+                        </div>
+                    </div>
+                    <div class="row row-button text-center">
+                            <a class="btn-trends" target="_blank" href=""><i class="fas fa-search"></i> &nbsp; Find WOEID</a>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <div class="row row-cards">
+                <div class="card card-data">
+                    <div class="card-content" id="woeidData">
+                        <table class="table" id="dataTable">
+                            <thead>
+                            <tr>
+                                <th class="sorting_asc">Locality</th>
+                                <th class="sorting_asc">Admin Area</th>
+                                <th class="sorting_asc">Country</th>
+                                <th class="sorting_asc">WOEID</th>
 
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="odd gradeA">
+                                <td class="center">asdasd</td>
+                                <td class="center">
+                                    xdfx
+                                </td>
+                                <td class="center">sdad</td>
+                                <td class="center">asdasd</td>
+                            </tr>
+                            <tr class="odd gradeA">
+                                <td class="center">asdasd</td>
+                                <td class="center">
+                                    xdfx
+                                </td>
+                                <td class="center">sdad</td>
+                                <td class="center">asdasd</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3 plain-element">
+
+        </div>
+    </div>
 </div>
 
 {% endblock %}
+
