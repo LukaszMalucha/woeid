@@ -15,12 +15,13 @@
                     <br>
                     <div class="row row-form">
                         <div class="input-field col s12">
-                            <input id="icon_prefix" type="text" class="validate">
+                            <input id="icon_prefix" type="text" class="validate"  maxlength="50">
                             <label for="icon_prefix">Search for Town, State or Country</label>
                         </div>
                     </div>
                     <div class="row row-button text-center">
-                            <a class="btn-trends" target="_blank" href=""><i class="fas fa-search"></i> &nbsp; Find WOEID</a>
+                        <a class="btn-trends" target="_blank" href=""><i class="fas fa-search"></i> &nbsp; Find
+                            WOEID</a>
                     </div>
                     <br>
                 </div>
@@ -28,33 +29,35 @@
             <div class="row row-cards">
                 <div class="card card-data">
                     <div class="card-content" id="woeidData">
-                        <table class="table" id="dataTable">
+                        <table id="dataTable" class="display" style="width:100%">
                             <thead>
                             <tr>
-                                <th class="sorting_asc">Locality</th>
-                                <th class="sorting_asc">Admin Area</th>
-                                <th class="sorting_asc">Country</th>
-                                <th class="sorting_asc">WOEID</th>
-
+                                <th>Locality</th>
+                                <th>State/Province</th>
+                                <th>Country</th>
+                                <th class="text-right">WOEID</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr class="odd gradeA">
-                                <td class="center">asdasd</td>
-                                <td class="center">
-                                    xdfx
-                                </td>
-                                <td class="center">sdad</td>
-                                <td class="center">asdasd</td>
+                            <tr>
+                                <td>Tiger Nixon</td>
+                                <td>System Architect</td>
+                                <td>US</td>
+                                <td class="text-right">32080012</td>
                             </tr>
-                            <tr class="odd gradeA">
-                                <td class="center">asdasd</td>
-                                <td class="center">
-                                    xdfx
-                                </td>
-                                <td class="center">sdad</td>
-                                <td class="center">asdasd</td>
+                            <tr>
+                                <td>asdasd n</td>
+                                <td>asdasdgg</td>
+                                <td>US</td>
+                                <td class="text-right">32080012</td>
                             </tr>
+                            <tr>
+                                <td>Tigegdgd</td>
+                                <td>Sysdfsdft</td>
+                                <td>US</td>
+                                <td class="text-right">32080012</td>
+                            </tr>
+                            {{ dataset | safe }}
                             </tbody>
                         </table>
 
@@ -70,3 +73,11 @@
 
 {% endblock %}
 
+{% for element in dataset %}
+    <tr>
+        <td>{{ element }}</td>
+        <td>Sysdfsdft</td>
+        <td>US</td>
+        <td class="text-right">32080012</td>
+    </tr>
+{% endfor %}

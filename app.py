@@ -5,6 +5,7 @@ import datetime
 from twitter import twitter_api
 from flask import Flask, render_template, jsonify
 from flask_bootstrap import Bootstrap
+import pandas as pd
 
 
 # APP SETTINGS
@@ -20,8 +21,10 @@ Bootstrap(app)
 ## Main View
 @app.route('/')
 def dashboard():
+    dataset = pd.read_csv('woeid_1.csv',encoding = "utf-8-sig")
+    dataset = dataset.iloc[:10, :5]
 
-    return render_template('dashboard.html')
+    return render_template('dashboard.html', dataset = dataset.to_html())
 
 
 @app.errorhandler(404)

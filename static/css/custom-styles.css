@@ -170,6 +170,10 @@ a:hover {
 
 }
 
+.card-data .card-content {
+    padding: 1.5%;
+}
+
 
 
 .card-side {
@@ -290,7 +294,7 @@ a:hover {
     border:none;
     box-shadow: none;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: bold;
     line-height: 20px;
     padding: 6px 16px;
@@ -403,6 +407,22 @@ input.valid[type="text"]:not(.browser-default) {
 
 .dataTables_info {
     display: none;
+}
+
+th {
+    background: #f4faff;
+    color: #14171a;
+    font-size: 12px;
+    border-bottom: 1px solid #8ccff8;
+}
+
+tr {
+    font-size: 12px;
+    color: #14171a;
+}
+
+td {
+    padding: 10px 5px;
 }
 
 /*------------------------------------------------------------------------------
