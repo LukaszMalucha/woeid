@@ -5,3 +5,5 @@ geocoder.md
 __pycache__?
 venv/*
 .idea/*
+static/*
+templates/*
