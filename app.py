@@ -21,8 +21,6 @@ Bootstrap(app)
 ## Main View
 @app.route('/')
 def dashboard():
-    dataset = pd.read_csv('woeid_1.csv',encoding = "utf-8-sig")
-    dataset = dataset.iloc[:10, :5]
 
     return render_template('dashboard.html', dataset = dataset.to_html())
 
