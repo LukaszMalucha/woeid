@@ -4,7 +4,7 @@ import csv
 import datetime
 from db import db
 from twitter import twitter_api
-from flask import Flask, render_template, jsonify, redirect
+from flask import Flask, render_template, jsonify, request, redirect
 from flask_bootstrap import Bootstrap
 import pandas as pd
 
@@ -23,10 +23,19 @@ Bootstrap(app)
 
 
 ## Main View
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def dashboard():
-    dataset = LocalitiesModel.get_all()
+    # dataset = LocalitiesModel.get_all()
+    dataset = []
     return render_template('dashboard.html', dataset=dataset)
+
+
+@app.route('/find', methods=['POST'])
+def find():
+    locality = request.form['locality']
+    ## kapitalizuj
+    return jsonify({'locality': locality})
+
 
 
 @app.route('/upload')
