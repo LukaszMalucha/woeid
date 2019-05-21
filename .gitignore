@@ -1,3 +1,4 @@
+geo_clean.csv
 env.py
 geocoder.md
 *.pyc
@@ -7,5 +8,4 @@ venv/*
 .idea/*
 static/*
 templates/*
-geo_clean.csv
 localities.db
