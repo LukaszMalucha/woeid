@@ -20,6 +20,10 @@ class LocalitiesModel(db.Model):
         db.session.commit()
 
     @classmethod
+    def get_columns(cls):
+        return LocalitiesModel.__table__.columns.keys()
+
+    @classmethod
     def get_all(cls):
         return cls.query.all()
 

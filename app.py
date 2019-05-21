@@ -1,6 +1,7 @@
 import os
 import env
 import csv
+import json
 import datetime
 from db import db
 from twitter import twitter_api
@@ -25,16 +26,23 @@ Bootstrap(app)
 ## Main View
 @app.route('/', methods=['GET','POST'])
 def dashboard():
-    # dataset = LocalitiesModel.get_all()
-    dataset = []
-    return render_template('dashboard.html', dataset=dataset)
+    return render_template('dashboard.html')
 
 
 @app.route('/find', methods=['POST'])
 def find():
-    locality = request.form['locality']
-    ## kapitalizuj
-    return jsonify({'locality': locality})
+    column_list = LocalitiesModel.get_columns()
+    locality = str(request.form['locality']).capitalize()
+    query = LocalitiesModel.find_by_locality(locality=locality)
+    json_list = []
+    for result in query:
+        temp_dict = {}
+        for col in column_list:
+            temp_dict[col] = getattr(result, col)
+        json_list.append(temp_dict)
+
+
+    return jsonify(json_list)
 
 
 
