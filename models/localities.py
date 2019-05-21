@@ -1,5 +1,5 @@
 from db import db
-
+from sqlalchemy import or_
 
 class LocalitiesModel(db.Model):
     __tablename__ = 'localities'
