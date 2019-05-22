@@ -48,6 +48,7 @@ def find():
 
 @app.route('/upload')
 def upload():
+    """Helper Function"""
     # create context
     with open('geo1.csv', encoding="utf8") as f:
         # read csv
